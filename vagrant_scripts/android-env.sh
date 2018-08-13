@@ -2,12 +2,6 @@
 
 pushd ~vagrant > /dev/null 2>&1
 
-#if [ ! -d ~vagrant/android-sdk-linux ]; then
-#  echo "Installing android sdk..."
-#  wget http://dl.google.com/android/android-sdk_r22.6-linux.tgz > /dev/null 2>&1
-#  tar xzf android-sdk_r22.6-linux.tgz > /dev/null 2>&1
-#  rm -f android-sdk_r22.6-linux.tgz > /dev/null 2>&1
-#fi
 
 #grep android ~vagrant/.bashrc > /dev/null 2>&1
 #if [ $? -ne 0 ]; then
@@ -25,33 +19,14 @@ if [ $? -ne 0 ]; then
   sudo apt-get install -y -qq --force-yes openjdk-7-jdk > /dev/null 2>&1
 fi
 
-#which adb > /dev/null 2>&1
-#if [ $? -ne 0 ]; then
-#  echo "Installing dependencies for android..."
-#  sudo apt-get install -y -qq --force-yes libgd2-xpm ia32-libs ia32-libs-multiarch > /dev/null 2>&1#
-#
-#  echo "Installing android sdk tools..."
-#  echo y | android update sdk --filter platform-tools,build-tools-19.0.3,sysimg-17,android-17,extra-android-support --no-ui --force > /dev/null 2>&1
-#fi
 
-#popd > /dev/null 2>&1
+echo "Installing Java 8 oracle..."
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install -y java-common oracle-java8-installer
 
-#echo "Copying android scripts..."
-#cp -p /vagrant/android-*.sh ~vagrant/
-
-#source /vagrant/android-common.sh
-#if [ ! -d ${APPS_DIR} ]; then
-#  ~vagrant/android-create-apps.sh
-#  ~vagrant/android-test-apps.sh
-#fi
-
-#sudo apt-get clean -y
-#sudo apt-get autoclean -y
-
-#rm -f /home/vagrant/.bash_history
-#rm -f /home/vagrant/.bash_logout
-
+echo "Installing Android Studio..."
 sudo add-apt-repository ppa:maarten-fonville/android-studio
 sudo apt update
-sudo apt install android-studio
+sudo apt install -y android-studio
 
