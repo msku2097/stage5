@@ -9,7 +9,7 @@ sudo apt-get update > /dev/null 2>&1
 sudo apt-get install -y java > /dev/null 2>&1
 sudo apt-get install -y android-tools-adb > /dev/null 2>&1
 # sudo apt-get install apt-file && apt-file update > /dev/null 2>&1
-sudo apt-get install -y python-software-properties > /dev/null 2>&1
+#sudo apt-get install -y python-software-properties > /dev/null 2>&1
 sudo apt-get install -y build-essential > /dev/null 2>&1
 #sudo apt-get install -y dkms > /dev/null 2>&1
 
@@ -26,12 +26,15 @@ sudo apt-get install -y build-essential > /dev/null 2>&1
 #sudo apt-get install -y xubuntu-desktop > /dev/null 2>&1
 
 #or....
-echo "Installing Ubuntu xfce..."
-sudo apt-get install -y xfce4 xfce4-goodies > /dev/null 2>&1
+#echo "Installing Ubuntu xfce..."
+#sudo apt-get install -y xfce4 xfce4-goodies > /dev/null 2>&1
+
+#echo "Installing Gnome..."
+sudo apt-get install ubuntu-gnome-desktop -y > /dev/null 2>&1
 
 # Install virtualbox additions
 echo "Installing VBox additions..."
 sudo apt-get install virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11
-sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
+#sudo sed -i 's/allowed_users=.*$/allowed_users=anybody/' /etc/X11/Xwrapper.config
 
 

@@ -11,5 +11,5 @@ su - vagrant -c 'sudo apt-get install -y firefox'
 
 #only for vagrant vm
 echo "launching Padrino Webapp"
-su - vagrant -c 'cd /padrino-webapp && nohup /bin/bash ./start.sh 0 <&- &> /dev/null &'
+su - vagrant -c 'cd /home/vagrant/padrino-webapp && nohup /bin/bash ./start.sh 0 <&- &> /dev/null &'
 
