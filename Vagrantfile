@@ -16,6 +16,6 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, :path => "vagrant_scripts/install-rvm.sh"
   config.vm.provision :shell, :path => "vagrant_scripts/desktop-env.sh"
   config.vm.provision :shell, :path => "vagrant_scripts/padrino.sh"
-  config.vm.provision :shell, :path => "vagrant_scripts/android-env.sh"
+  config.vm.provision :shell, :path => "vagrant_scripts/android-env.sh", env: {"ANDROID_HOME" => "/opt/android/sdk", "ANDROID_AVD_HOME" => "/home/vagrant/.android/avd/", "ANDROID_SDK_ROOT" => "/opt/android/sdk"}
   config.vm.provision :shell, :path => "vagrant_scripts/appium-env.sh"
 end
