@@ -62,7 +62,8 @@ echo "=== Setup emulator"
 cd $ANDROID_HOME/tools/bin
 yes | ./sdkmanager "system-images;android-24;google_apis;arm64-v8a" > /dev/null 2>&1
 yes | ./sdkmanager --licenses > /dev/null 2>&1
-echo no | ./avdmanager create avd -n test -k "system-images;android-24;google_apis;arm64-v8a" -f -p /home/vagrant/.android/avd > /dev/null 2>&1
+#echo no | ./avdmanager create avd -n test -k "system-images;android-24;google_apis;arm64-v8a" -f -p /home/vagrant/.android/avd > /dev/null 2>&1
+echo no | ./avdmanager create avd -n test -k "system-images;android-24;google_apis;arm64-v8a" > /dev/null 2>&1
 ./sdkmanager emulator > /dev/null 2>&1
 ./sdkmanager platform-tools > /dev/null 2>&1
 ./sdkmanager "platforms;android-24" > /dev/null 2>&1
